@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Entity
 @Getter
 @Setter
@@ -29,5 +31,8 @@ public class Product {
     private Category category;
 
     private String producerName;
+
+    @Temporal(TemporalType.DATE)
+    private LocalDate receivingDate;
 
 }

@@ -33,6 +33,7 @@ public class ProductConverter implements Converter<Product, ProductDTO> {
         productDTO.setWeight(product.getWeight());
         productDTO.setProducerName(product.getProducerName());
         productDTO.setCategory(product.getCategory().name());
+        productDTO.setReceivingDate(product.getReceivingDate());
 
         return productDTO;
     }
@@ -55,6 +56,7 @@ public class ProductConverter implements Converter<Product, ProductDTO> {
         product.setWeight(productDTO.getWeight());
         product.setProducerName(productDTO.getProducerName());
         product.setCategory(Category.valueOf(productDTO.getCategory().toUpperCase()));
+        product.setReceivingDate(productDTO.getReceivingDate());
 
         return product;
     }

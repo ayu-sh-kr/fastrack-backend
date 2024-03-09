@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 /**
  * DTO for {@link dev.arhimedes.product.entity.Product}
@@ -31,5 +32,7 @@ public class ProductDTO implements Serializable {
 
     @NotBlank
     private String producerName;
+
+    private LocalDate receivingDate;
 
 }
