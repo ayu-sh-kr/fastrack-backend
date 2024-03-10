@@ -59,6 +59,8 @@ public class ShipmentConverter implements Converter<Shipment, ShipmentDTO> {
             );
         }
 
+        shipmentDTO.setCost(shipment.getShipmentCost());
+
         shipmentDTO.setDispatchDate(shipment.getDispatchDate());
 
         shipmentDTO.setDeliveredTime(shipment.getDeliveredTime());
@@ -110,6 +112,8 @@ public class ShipmentConverter implements Converter<Shipment, ShipmentDTO> {
                 );
             }
         }
+
+        shipment.setShipmentCost(shipmentDTO.getCost());
 
         shipment.setDispatchDate(shipmentDTO.getDispatchDate());
         shipment.setDeliveredTime(shipmentDTO.getDeliveredTime());

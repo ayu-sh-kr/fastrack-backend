@@ -32,6 +32,10 @@ public class Product {
 
     private String producerName;
 
+    private String producerEmail;
+
+    private Long producerNumber;
+
     @Temporal(TemporalType.DATE)
     private LocalDate receivingDate;
 

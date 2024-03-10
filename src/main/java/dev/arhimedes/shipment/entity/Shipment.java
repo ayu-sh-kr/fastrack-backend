@@ -34,6 +34,8 @@ public class Shipment {
     @JoinColumn(name = "product_id")
     private Product product;
 
+    private double shipmentCost;
+
     @Enumerated(EnumType.STRING)
     private ShipmentStatus shipmentStatus;
 

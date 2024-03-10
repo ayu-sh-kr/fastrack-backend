@@ -2,6 +2,7 @@ package dev.arhimedes.product.dtos;
 
 import dev.arhimedes.utils.validators.annotations.ValidCategory;
 import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,6 +33,14 @@ public class ProductDTO implements Serializable {
 
     @NotBlank
     private String producerName;
+
+    @NotBlank
+    private String producerEmail;
+
+    @Email
+    @NotBlank
+    private String producerNumber;
+
 
     private LocalDate receivingDate;
 

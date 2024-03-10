@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public interface ShipmentRepository extends JpaRepository<Shipment, Integer> {
     @Transactional
@@ -36,5 +37,9 @@ public interface ShipmentRepository extends JpaRepository<Shipment, Integer> {
     @Modifying
     @Query("update Shipment s set s.shipmentStatus = ?1, s.deliveredTime = ?2 where s.shipmentId = ?3")
     void updateShipmentStatusAndDeliveredTimeByShipmentId(ShipmentStatus shipmentStatus, LocalDateTime deliveredTime, int shipmentId);
+
+
+    @Query("select s from Shipment s where s.dispatchDate = ?1")
+    List<Shipment> findByDispatchDate(LocalDate date);
 
 }
